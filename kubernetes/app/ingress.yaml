@@ -2,6 +2,7 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: python-test-web-app-ingress
+  namespace: test
   labels:
     name: python-test-web-app
   annotations:
