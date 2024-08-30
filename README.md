@@ -47,7 +47,7 @@ This is a simple python app which just return a configurable custom message
 Assumed the environment has docker installed, running kubernetes cluster, terraform installed
 
 ## Any improvements
-For this simple use-case, this setup would work just fine. Maybe creating helm templates for k8s manifests used here in future just for scalability and reusability.
+For this simple use-case, this setup would work just fine. However, as the requirements grow for scalability and reusability we can create helm templates for k8s manifests, terraform modules, implement a CI/CD process etc.
 
 ## possible CI/CD implementation
 1. Lets assume we use github actions to setup CI/CD for this app.
