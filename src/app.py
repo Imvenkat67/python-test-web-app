@@ -21,7 +21,7 @@ MESSAGE = os.getenv('MESSAGE', 'Hello user!')
 
 @app.before_request
 def log_request_info():
-    logger.info('Request:', request_remote_addr, request.method, request.scheme, request.full_path)
+    logger.info('Request:', request.remote_addr, request.method, request.scheme, request.full_path)
 
 #define welcome page
 @app.route('/', methods=['GET'])
