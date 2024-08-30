@@ -1,7 +1,7 @@
 from flask import Flask, jsonify, request
 import logging
 import os
-from prometheus_client import Counter
+from prometheus_client import Counter, generate_latest
 
 app = Flask(__name__)
 
@@ -34,6 +34,11 @@ def welcome():
 def get_message():
     http_requests_total.inc()
     return jsonify({"message": MESSAGE})
+
+#expose metrics on a endpoint for prometheus
+@app.route('/metrics', methods=['GET'])
+def metrics():
+    return generate_latest(), 200
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8080)
